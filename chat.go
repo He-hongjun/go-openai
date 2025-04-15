@@ -134,10 +134,9 @@ type AudioOutput struct {
 }
 
 type ChatMessageFile struct {
-	ID   string `json:"id,omitempty"`
-	Name string `json:"name,omitempty"`
-	Type string `json:"type,omitempty"`
-	Data string `json:"data,omitempty"`
+	ID   string `json:"file_id,omitempty"`
+	Name string `json:"filename,omitempty"`
+	Data string `json:"file_data,omitempty"`
 }
 
 type ChatMessagePartType string
@@ -147,6 +146,7 @@ const (
 	ChatMessagePartTypeImageURL   ChatMessagePartType = "image_url"
 	ChatMessagePartTypeInputAudio ChatMessagePartType = "input_audio"
 	ChatMessagePartTypeAudio      ChatMessagePartType = "audio"
+	ChatMessagePartTypeFile       ChatMessagePartType = "file"
 )
 
 type ChatMessagePart struct {
