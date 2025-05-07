@@ -351,7 +351,9 @@ type ChatCompletionRequest struct {
 	// Parameters for audio output. Required when audio output is requested with modalities: ["audio"]
 	Audio *AudioOutput `json:"audio,omitempty"`
 	// Configuration for a predicted output.
-	Prediction *Prediction `json:"prediction,omitempty"`
+	Prediction     *Prediction `json:"prediction,omitempty"`
+	EnableThinking *bool       `json:"enable_thinking,omitempty"`
+	ThinkingBudget *int        `json:"thinking_budget,omitempty"`
 }
 
 type StreamOptions struct {
