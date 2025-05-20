@@ -354,6 +354,11 @@ type ChatCompletionRequest struct {
 	Prediction     *Prediction `json:"prediction,omitempty"`
 	EnableThinking *bool       `json:"enable_thinking,omitempty"`
 	ThinkingBudget *int        `json:"thinking_budget,omitempty"`
+	// ChatTemplateKwargs provides a way to add non-standard parameters to the request body.
+	// Additional kwargs to pass to the template renderer. Will be accessible by the chat template.
+	// Such as think mode for qwen3. "chat_template_kwargs": {"enable_thinking": false}
+	// https://qwen.readthedocs.io/en/latest/deployment/vllm.html#thinking-non-thinking-modes
+	ChatTemplateKwargs map[string]any `json:"chat_template_kwargs,omitempty"`
 }
 
 type StreamOptions struct {
