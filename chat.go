@@ -287,10 +287,10 @@ type ChatCompletionResponseFormat struct {
 }
 
 type ChatCompletionResponseFormatJSONSchema struct {
-	Name        string          `json:"name"`
-	Description string          `json:"description,omitempty"`
-	Schema      json.RawMessage `json:"schema"`
-	Strict      bool            `json:"strict"`
+	Name        string         `json:"name"`
+	Description string         `json:"description,omitempty"`
+	Schema      json.Marshaler `json:"schema"`
+	Strict      bool           `json:"strict"`
 }
 
 func (r *ChatCompletionResponseFormatJSONSchema) UnmarshalJSON(data []byte) error {
